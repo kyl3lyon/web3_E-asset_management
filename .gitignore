@@ -3,3 +3,16 @@ node_modules
 dist
 dist-ssr
 *.local
+
+# Directories
+venv/
+dist/
+node_modules/
+nft_storage_server/
+backend/venv/
+
+# Files
+*.log
+*.pyc
+__pycache__/
+*.local
