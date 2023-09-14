@@ -99,17 +99,26 @@ export default function App() {
                     if (uploadedFile) {
                         const formData = new FormData();
                         formData.append('file', uploadedFile);
-                        const response = await fetch('/upload', {
+                        const response = await fetch('https://probable-umbrella-jw99w9gjjjr2j675-5000.app.github.dev/', {
                             method: 'POST',
                             body: formData
                         });
+
                         const data = await response.json();
-                        console.log(data);
-                        // TODO: Handle the response. For now, we're just logging it.
+                        
+                        if (response.status !== 200) {
+                            // Display the error message to the user
+                            alert(data.error || "An error occurred while uploading.");
+                        } else {
+                            // Handle successful upload, e.g., display IPFS URL
+                            console.log(data);
+                            // TODO: Display the IPFS URL to the user.
+                        }
                     } else {
                         alert("Please upload a file first!");
                     }
                 }}>Upload to IPFS</button>
+
 
                 {/* Footer */}
                 <div className="mt-12 border-t pt-6">
