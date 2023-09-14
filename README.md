@@ -1,17 +1,32 @@
-## Running React on Repl.it
+## Web3 E-Asset Management Portal
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
+Secure, manage, and control your digital assets in a decentralized storage system using this portal. Built with React and Vite, it offers a modern interface, fast performance, and security features to ensure your digital assets are safe and accessible.
 
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
+### Features
 
-Using the two in conjunction is one of the fastest ways to build a web app.
+- **Decentralized Storage**: Keep your digital assets in a decentralized storage system, preventing any single point of failure.
+  
+- **End-to-End Encryption**: We prioritize the safety of your content with encryption and decryption capabilities. Your digital assets remain under your control at all times.
+  
+- **Access Control**: Define precise policies for who can access your assets, how long they can access them, and whether they can add other users.
 
 ### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
 
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
+1. Clone the repository to your local machine.
+2. Navigate to the project directory and install the necessary dependencies using `npm install`.
+3. Start the development server using `npm run dev`.
+4. Navigate to the provided local URL, and you should see the portal live.
 
-### Typescript
+### Development
 
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+This project utilizes React for the frontend, ensuring a component-based and efficient approach to building user interfaces. The backend logic is powered by Vite, offering optimized builds and features like Hot Module Reloading (HMR).
+
+### Contributing
+
+This project is open source for viewing and understanding purposes. We use the Creative Commons Attribution-NonCommercial-NoDerivatives license. You can view the code, but sharing and commercial use are restricted. Please refer to our [LICENSE](./LICENSE) for more details.
+
+### Links
+
+- [Distinct IP](https://www.distinctip.com)
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
