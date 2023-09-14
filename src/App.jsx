@@ -11,6 +11,9 @@ export default function App() {
                     </div>
                     <nav className="text-lg">
                         <a href="#" className="block mb-4 hover:text-white text-center">Home</a>
+                        <a href="#" className="block mb-4 hover:text-white text-center">Upload</a>
+                        <a href="#" className="block mb-4 hover:text-white text-center">Manage</a>
+                        <a href="#" className="block mb-4 hover:text-white text-center">Analytics</a>
                         {/* Add more navigation items here */}
                     </nav>
                 </div>
