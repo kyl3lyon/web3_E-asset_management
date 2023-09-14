@@ -4,9 +4,9 @@ export default function App() {
     return (
         <div className="flex h-screen bg-gray-100 font-poppins">
             {/* Side Panel */}
-            <div className="bg-gray-900 w-1/4 max-w-xs p-4 text-gray-200 flex items-center">
-                <div className="flex flex-col space-y-4 w-full">
-                    <div className="mb-4 mx-auto">
+            <div className="bg-gray-900 w-1/4 max-w-xs p-4 text-gray-200">
+                <div className="flex flex-col items-center space-y-4 w-full pt-8">
+                    <div className="mb-4">
                         <img src="/favicon.svg" alt="Logo" className="h-16" />
                     </div>
                     <nav className="text-lg">
