@@ -4,14 +4,20 @@ This module initializes a Flask web server and defines routes for asset manageme
 
 from flask import Flask, request, jsonify
 import requests
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 NODE_SERVER_URL = "http://localhost:5001"  # Assuming the Node server runs on port 5001
 
 @app.route('/')
 def index():
     return "Digital Asset Management API"
+
+@app.route('/test', methods=['GET'])
+def test():
+    return "Test successful!"
 
 @app.route('/upload', methods=['POST'])
 def upload():

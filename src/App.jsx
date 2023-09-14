@@ -99,7 +99,7 @@ export default function App() {
                     if (uploadedFile) {
                         const formData = new FormData();
                         formData.append('file', uploadedFile);
-                        const response = await fetch('https://probable-umbrella-jw99w9gjjjr2j675-5000.app.github.dev/', {
+                        const response = await fetch('https://probable-umbrella-jw99w9gjjjr2j675-5000.app.github.dev/upload', {
                             method: 'POST',
                             body: formData
                         });
