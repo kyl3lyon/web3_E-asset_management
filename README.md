@@ -1,6 +1,6 @@
 ## Web3 E-Asset Management Portal
 
-Secure, manage, and control your digital assets in a decentralized storage system using this portal. Built with React and Vite, it offers a modern interface, fast performance, and security features to ensure your digital assets are safe and accessible.
+Secure, manage, and control your digital assets in a decentralized storage system using this portal. Built with React for the frontend, Flask for the backend API, and a Node.js server for direct interaction with nft.storage, this platform offers a modern interface, fast performance, and security features to ensure your digital assets are safe and accessible.
 
 ### Features
 
@@ -13,13 +13,24 @@ Secure, manage, and control your digital assets in a decentralized storage syste
 ### Getting Started
 
 1. Clone the repository to your local machine.
-2. Navigate to the project directory and install the necessary dependencies using `npm install`.
-3. Start the development server using `npm run dev`.
-4. Navigate to the provided local URL, and you should see the portal live.
+2. Navigate to the frontend directory and install the necessary dependencies using `npm install`.
+3. Start the frontend development server using `npm run dev`.
+4. Navigate to the backend directory, set up a virtual environment, and install the necessary dependencies (e.g., Flask).
+5. Start the Flask backend server.
+6. Navigate to the `nft_storage_server` directory and install the required dependencies using `npm install`.
+7. Start the Node.js server for `nft.storage` interactions.
+8. Navigate to the provided local URL, and you should see the portal live.
+
+### System Architecture
+
+This platform uses a three-tier architecture:
+- **Frontend**: Built with React, it serves as the user interface where users can upload and manage their digital assets.
+- **Backend API**: Built with Flask, it acts as an intermediary between the frontend and the Node.js server.
+- **Node.js Server**: Responsible for interacting with the `nft.storage` API to store files on IPFS.
 
 ### Development
 
-This project utilizes React for the frontend, ensuring a component-based and efficient approach to building user interfaces. The backend logic is powered by Vite, offering optimized builds and features like Hot Module Reloading (HMR).
+The frontend utilizes React, ensuring a component-based and efficient approach to building user interfaces. The backend API logic is powered by Flask, offering a lightweight and flexible framework for web development. The Node.js server interacts with the `nft.storage` API to handle decentralized storage.
 
 ### Contributing
 
@@ -30,3 +41,5 @@ This project is open source for viewing and understanding purposes. We use the C
 - [Distinct IP](https://www.distinctip.com)
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
+- [Flask](https://flask.palletsprojects.com/)
+- [nft.storage](https://nft.storage/)
