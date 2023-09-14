@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './App.css';
 
 export default function App() {
+    const [uploadedFile, setUploadedFile] = useState(null);
+    const [previewURL, setPreviewURL] = useState(null);  // <-- preview URL
+
     return (
         <div className="flex h-screen bg-gray-100 font-poppins">
             {/* Side Panel */}
@@ -33,8 +37,18 @@ export default function App() {
                 <div className="border p-4 mb-6 bg-white rounded shadow-md">
                     <div className="bg-gray-200 p-4 text-center mb-2 rounded cursor-pointer hover:bg-gray-300">
                         Drag and drop or 
-                        <button className="text-gray-800 ml-2 p-2 border rounded hover:bg-gray-300">Upload</button>
+                        <button className="text-gray-800 ml-2 p-2 border rounded hover:bg-gray-300" onClick={(e) => {
+                            e.preventDefault();
+                            const fileInput = document.createElement('input');
+                            fileInput.type = 'file';
+                            fileInput.onchange = (e) => {
+                                setUploadedFile(e.target.files[0]);
+                                setPreviewURL(URL.createObjectURL(e.target.files[0]));  // <-- Generate preview URL
+                            };
+                            fileInput.click();
+                        }}>Upload</button>
                     </div>
+                    {previewURL && <img src={previewURL} alt="Preview" className="mt-4 w-64"/>}  {/* <-- Display the preview */}
                 </div>
 
                 <p className="mb-4 text-gray-600">Set access controls for your uploaded content.</p>
@@ -81,9 +95,21 @@ export default function App() {
                 
                 <p className="mb-6 text-gray-600">Upload to the IPFS when ready.</p>
 
-                <button className=" bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700">
-                    Upload
-                </button>
+                <button className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700" onClick={async () => {
+                    if (uploadedFile) {
+                        const formData = new FormData();
+                        formData.append('file', uploadedFile);
+                        const response = await fetch('/upload', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const data = await response.json();
+                        console.log(data);
+                        // TODO: Handle the response. For now, we're just logging it.
+                    } else {
+                        alert("Please upload a file first!");
+                    }
+                }}>Upload to IPFS</button>
 
                 {/* Footer */}
                 <div className="mt-12 border-t pt-6">
