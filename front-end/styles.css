@@ -1,0 +1,7 @@
+#preview .relative .close-icon {
+    visibility: hidden;
+}
+
+#preview .relative:hover .close-icon {
+    visibility: visible;
+}

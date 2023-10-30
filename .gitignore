@@ -1,19 +1,11 @@
-node_modules
-.DS_Store
-dist
-dist-ssr
-*.local
-
-# Directories
+# Virtual Environment
 venv/
-dist/
-node_modules/
-nft_storage_server/
-backend/venv/
 
-# Files
-*.log
+# Python specific
 *.pyc
-__pycache__/
-*.local
-.env
+*.pyo
+*.egg-info/
+
+# General files to ignore
+.DS_Store
+Thumbs.db
