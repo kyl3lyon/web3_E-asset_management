@@ -1,11 +1,42 @@
 # Virtual Environment
 venv/
+__pycache__/
 
 # Python specific
 *.pyc
 *.pyo
 *.egg-info/
+*.egg
+*.log
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode settings
+.vscode/
+
+# PyCharm settings
+.idea/
+
+# SQLite databases
+*.sqlite3
+*.sqlite3-journal
 
 # General files to ignore
 .DS_Store
 Thumbs.db
+
+# OS-specific storage directories
+.Trashes
+*.swp
+*.swo
+*.swn
+
+# Packaging
+build/
+dist/
+*.tar.gz
+*.whl
+
+# Ignore the go-ipfs directory
+back-end/go-ipfs/
