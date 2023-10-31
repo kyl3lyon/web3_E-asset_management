@@ -12,24 +12,23 @@ RUN apt-get update && \
     mv go-ipfs/ipfs /usr/local/bin/ipfs && \
     rm -rf go-ipfs_v0.9.1_linux-arm64.tar.gz go-ipfs
 
-
 # Copy your application code into the container
 COPY . /app/
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Initialize IPFS
-RUN ipfs init
-
-# Change the ownership of the IPFS data directory
-USER root
+# Ensure data directory exists
 RUN mkdir -p /data/ipfs && chown -R 1000:1000 /data/ipfs
+
+# Switch to non-root user
 USER 1000
 
 # Expose the necessary ports for IPFS to operate
 EXPOSE 4001 5001 8080
 
-# Start the IPFS daemon by default when the container starts
-CMD ["ipfs", "daemon"]
+# Set the IPFS_PATH environment variable
+ENV IPFS_PATH /data/ipfs
 
+# Start the IPFS daemon by default when the container starts
+CMD ipfs init --profile=server --empty-repo && ipfs daemon

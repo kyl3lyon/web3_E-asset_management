@@ -1,0 +1,18 @@
+=============== Oct 31, 2023 (UTC) ===============
+02:18:00.577228 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+02:18:00.618239 db@open opening
+02:18:00.626634 version@stat F·[] S·0B[] Sc·[]
+02:18:00.634851 db@janitor F·2 G·0
+02:18:00.638834 db@open done T·19.381208ms
+02:18:00.667333 db@close closing
+02:18:00.668752 db@close done T·1.317042ms
+=============== Oct 31, 2023 (UTC) ===============
+02:18:00.784524 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+02:18:00.788057 version@stat F·[] S·0B[] Sc·[]
+02:18:00.788639 db@open opening
+02:18:00.790907 journal@recovery F·1
+02:18:00.797289 journal@recovery recovering @1
+02:18:00.802483 memdb@flush created L0@2 N·6 S·1KiB "/F5..3XI,v6":"/pi..rty,v1"
+02:18:00.803786 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+02:18:00.820895 db@janitor F·3 G·0
+02:18:00.821773 db@open done T·32.54075ms
