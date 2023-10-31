@@ -31,4 +31,4 @@ EXPOSE 4001 5001 8080
 ENV IPFS_PATH /data/ipfs
 
 # Start the IPFS daemon by default when the container starts
-CMD ipfs init --profile=server --empty-repo && ipfs daemon
+CMD if [ ! -f $IPFS_PATH/config ]; then ipfs init --profile=server --empty-repo; fi && ipfs daemon

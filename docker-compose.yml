@@ -8,3 +8,11 @@ services:
       - 4001:4001
       - 5001:5001
       - 8080:8080
+  flask:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask
+    volumes:
+      - ./back-end:/app
+    ports:
+      - 5000:5000
